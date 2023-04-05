@@ -1,0 +1,42 @@
+<%- include ('../partials/head') %>
+<%- include ('../partials/menu') %>
+<%- include ('../partials/message') %>
+
+<main>
+  <div class="container">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Date and Time</th>
+            <th scope="col">Button</th>
+          </tr>
+        </thead>
+        <tbody>
+                <% results.forEach(event =>{ %>
+                      <tr>
+                        <td>
+                          <%= event.name %>
+                        </td>
+                        <td>
+                          <%= event.images[0].url %>
+                        </td>
+                        <td>
+                          <%= event.dates.start.localDate %>
+                        </td>
+                        <td>
+                          <a href = '<%= event.url %>' class="btn btn-primary">
+                            link to website
+                          </a>
+                        </td>
+                      </tr>      
+                <%}) %> 
+        </tbody>
+      </table>
+
+  </div>
+</main>
+
+<%- include ('../partials/footer') %>
